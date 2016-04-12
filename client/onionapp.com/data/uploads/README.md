@@ -1,0 +1,2 @@
+Onion CMS Skeleton Application
+==============================

@@ -1,0 +1,62 @@
+{
+    "name": "m3uzz/onion-cms-skeleton",
+    "description": "Skeleton Application for Onion CMS",
+    "homepage": "http://onion.m3uzz.com/",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Humberto S Lourenco",
+            "email": "betto@m3uzz.com"
+        }
+    ], 
+   "keywords": [
+        "framework",
+        "m3uzz",
+        "onion",
+        "cms"
+    ],
+    "type": "package",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "m3uzz/onion-cms-skeleton",
+                "version": "master",
+                "dist": {
+                    "url": "https://github.com/m3uzz/onion-cms-skeleton/archive/master.zip",
+                    "type": "zip"
+                },
+                "source": {
+                    "url": "https://github.com/m3uzz/onion-cms-skeleton.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "m3uzz/onionlib": "master",
+        "m3uzz/onionsrv": "master",
+        "m3uzz/onionfw": "master",
+        "zendframework/zendframework": "dev-master",
+        "doctrine/doctrine-orm-module": "dev-master",
+        "firephp/firephp-core": "dev-master",
+        "facebook/php-sdk-v4": "dev-master"
+    },
+    "require-dev": {
+        "zendframework/zftool": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master",
+        "bjyoungblood/bjy-profiler": "dev-master"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "bin": [ ],
+   "scripts": {
+        "post-update-cmd": "ls -al",
+        "post-package-install": [ ],
+        "post-install-cmd": [ ],
+        "post-autoload-dump": [ ],
+        "post-create-project-cmd": [ ]
+    }
+}

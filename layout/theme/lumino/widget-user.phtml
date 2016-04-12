@@ -1,0 +1,104 @@
+<?php
+/**
+ * This file is part of Onion
+ *
+ * Copyright (c) 2014-2016, Humberto Lourenço <betto@m3uzz.com>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Humberto Lourenço nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    Onion
+ * @author     Humberto Lourenço <betto@m3uzz.com>
+ * @copyright  2014-2016 Humberto Lourenço <betto@m3uzz.com>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/m3uzz/onionfw
+ */
+ 
+if (isset($loUser) && is_object($loUser))
+{
+	$loPerson = $loUser->get('Person');
+	$loGroup = $loUser->get('UserGroup');
+	$lsPicture = $loUser->get('stPicture');
+
+	$lsRouteLogout = $this->url('access', array(
+		'action' => 'logout'
+	));
+	
+	$lsRouteChange = $this->url('user', array(
+		'action' => 'change-password'
+	));
+	
+	//$lsPicture = "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xaf1/v/t1.0-1/c2.0.64.64/p64x64/10562934_10203654680540486_3461784681337110976_n.jpg?oh=76a501c8c7b7c89777b7267c0b6cccec&oe=55DF17DD&__gda__=1440152087_ea6df2e9278058dc5935f50623f3ddf5";
+	
+	if (empty($lsPicture))
+	{
+		$lsPicture = '	<div class="media-object img-thumbnail">
+							<i class="glyphicon glyphicon-user" style="font-size:80px;" ></i>
+						</div>';
+	}
+	else
+	{
+		$lsPicture = '	<img class="media-object" src="' . $lsPicture . '" style="width:80px;">';
+	}
+				
+	echo '<ul class="user-menu">
+			<li class="dropdown pull-right">
+				&nbsp;&nbsp;
+				<a href="#" class="dropdown-toggle iconnav" role="button" data-toggle="dropdown">
+					<i class="glyphicon glyphicon-user"></i> 
+					<span class="caret"></span>
+				</a>
+				&nbsp;&nbsp;
+				<ul id="user-identification" class="dropdown-menu" role="menu" aria-labelledby="identification">
+					<div class="media">
+						<a class="pull-left" href="#">
+							' . $lsPicture . '
+						</a>
+						<div class="media-body text-nowrap">
+							<h4  class="text-nowrap media-heading">' . $loUser->get('stUsername') . '</h4>
+							<div class="text-nowrap">Nome: ' . $loPerson->get('stName') . '</div>
+							<div class="text-nowrap">E-mail: ' . $loUser->get('stEmail') . '</div>
+							<div class="text-nowrap">Grupo: ' . $loGroup->get('stLabel') . '</div>
+						</div>
+					</div>
+					<div role="presentation" class="divider"></div>
+					<div role="presentation" class="pull-right">
+						<div class="btn-group btn-group-xs">
+							<a class="btn btn-info openDialogModalBtn" href="#" data-act="' . $lsRouteChange . '" data-title="Change Password" data-pName="data-form" data-pValue="#ChangePassword" data-btnName="Salvar" data-btnDismiss="false">
+								<i class="glyphicon glyphicon-refresh"></i> Alterar senha
+							</a>
+							<a class="btn btn-default" href="' . $lsRouteLogout . '"><i class="glyphicon glyphicon-log-out"></i> Sair</a>
+						</div>
+					</div>
+				</ul>
+			</li>
+		</ul>';
+}

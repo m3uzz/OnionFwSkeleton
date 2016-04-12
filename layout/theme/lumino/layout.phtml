@@ -1,0 +1,118 @@
+<?php
+/**
+ * This file is part of Onion
+ *
+ * Copyright (c) 2014-2016, Humberto Lourenço <betto@m3uzz.com>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Humberto Lourenço nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    Onion
+ * @author     Humberto Lourenço <betto@m3uzz.com>
+ * @copyright  2014-2016 Humberto Lourenço <betto@m3uzz.com>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/m3uzz/onionfw
+ */
+ 
+$gsIcon = Onion\Config\Config::getAppOptions('icon');
+$gsTitle = Onion\Config\Config::getAppOptions('title');
+$gaBackend = Onion\Config\Config::getAppOptions('admin');
+$gaMeta = $gaBackend['meta'];
+$goUser = $this->identity();
+$gaLog = Onion\Config\Config::getAppOptions('log');
+$gbDebugJs = $gaLog['debug']['JS'];
+
+$this->headLink()
+->prependStylesheet($this->basePath('/vendor/lumino/css/theme-styles.css'), 'all')
+->prependStylesheet($this->basePath('/vendor/clockpicker/css/bootstrap-clockpicker.min.css'), 'all');
+
+$this->headScript()
+->prependFile($this->basePath('/js/backend.js'))
+->prependFile($this->basePath('/vendor/lumino/js/theme-script.js'))
+->prependFile($this->basePath('/vendor/lumino/js/jquery.cookie.js'))
+->prependFile($this->basePath('/vendor/clockpicker/js/bootstrap-clockpicker.min.js'))
+->prependFile($this->basePath('/vendor/moment-2.10.2/locale/pt-br.js'))
+->prependFile($this->basePath('/vendor/moment-2.10.2/js/moment.min.js'))
+->prependFile($this->basePath('/js/formmask.js'))
+->prependFile($this->basePath('/vendor/jquery-mask/js/jquery.mask.min.js'));
+
+echo $this->doctype($gaMeta['doctype']);
+?>
+<html lang="<?php echo $gaMeta['lang']; ?>">
+	<?php include ('area-head.phtml'); ?>
+	
+	<body class="default">
+		<nav class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<a class="navbar-brand" accessKey="H" href="<?php echo $this->url('backend') ?>">
+						<i class="glyphicon glyphicon-fire"></i> <?php echo $gsTitle; ?>
+					</a>
+			
+					<?php include ('widget-user.phtml'); ?>
+					<?php include ('widget-push.phtml'); ?>
+				</div>
+			</div>
+		</nav>
+		
+		<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar hidden-print">
+			<?php include ('widget-menu.phtml'); ?>
+			
+			<?php include ('area-footer.phtml'); ?>
+		</div>
+		
+		<div id="collapse-menu" class="btn btn-primary in hidden-print" title="Esconder/Exibir Menu">
+			<span id="collapse-menu-btn" class="glyphicon glyphicon-menu-left"></span>
+		</div>
+		
+		<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
+			<div class="row hidden-print">
+				<ol class="breadcrumb">
+					<li><a href="<?php echo $this->url('backend') ?>"><span class="glyphicon glyphicon-home"></span></a></li>
+				</ol>
+			</div>
+			<p/>
+			<?php echo $this->content; ?>
+		</div>
+
+		<?php include ('area-simple-modal.phtml'); ?>
+		<?php include ('area-loading.phtml'); ?>
+		
+		<?php echo $this->inlineScript() ?>
+	</body>
+</html>

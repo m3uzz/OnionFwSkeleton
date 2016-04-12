@@ -1,0 +1,81 @@
+<?php
+/**
+ * This file is part of Onion
+ *
+ * Copyright (c) 2014-2016, Humberto Lourenço <betto@m3uzz.com>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Humberto Lourenço nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    Onion
+ * @author     Humberto Lourenço <betto@m3uzz.com>
+ * @copyright  2014-2016 Humberto Lourenço <betto@m3uzz.com>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/m3uzz/onionfw
+ */
+ 
+$gaBackend = $this->get('admin');
+$gaMeta = $gaBackend['meta'];
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="<?php echo $gaMeta['lang']; ?>">
+    <head>
+        <meta charset="<?php echo $gaMeta['charset']?>">
+        <title><?php echo $lsType . $gaMeta['siteTitle']; ?></title>
+        <meta name="viewport" content="<?php echo $gaMeta['viewport']; ?>" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Le styles -->
+
+        <link href="/vendor/bootstrap-3.3.2/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="/vendor/vegas/jquery.vegas.min.css" media="all" rel="stylesheet" type="text/css" />
+		<link href="<?php echo $this->get('icon'); ?>" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+		
+        <!-- Scripts -->
+        <!--[if lt IE 9]><script type="text/javascript" src="/vendor/onion/js/html5shiv.js"></script><![endif]-->
+		<!--[if lt IE 9]><script type="text/javascript" src="/vendor/onion/js/respond.min.js"></script><![endif]-->
+		<script type="text/javascript" src="/vendor/jquery-1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="/vendor/vegas/jquery.vegas.min.js"></script>
+		<script type="text/javascript" src="/vendor/vegas/vegas.js"></script>
+    </head>
+    <body id="not-available">
+        <div class="container">
+        	<div class="jumbotron" style="margin-top:25%;">
+			    <h1 class="text-center">
+			    	<?php echo $this->get('msgs'); ?>
+			    </h1>
+			</div> 
+            <footer class="hidden-print text-center">
+               	<span class="badge">&copy; 2013 - <?php echo date('Y') ?> by <?php echo $gaMeta['sysName']; ?> Todos os direitos reservados.</span>
+            </footer>
+        </div>
+	</body>
+</html>
