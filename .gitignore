@@ -1,0 +1,8 @@
+./bin/*
+./client/*
+./temp/*
+./vendor/*
+./.settings/*
+./.buildpath
+./.project
+./composer.lock
