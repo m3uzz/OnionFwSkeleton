@@ -45,6 +45,7 @@
         "facebook/php-sdk-v4": "dev-master"
     },
     "require-dev": {
+        "m3uzz/oniontool": "master",
         "zendframework/zftool": "dev-master",
         "zendframework/zend-developer-tools": "dev-master",
         "bjyoungblood/bjy-profiler": "dev-master"
@@ -53,10 +54,12 @@
     "prefer-stable": true,
     "bin": [ ],
    "scripts": {
-        "post-update-cmd": "ls -al",
+        "post-update-cmd": [ ],
         "post-package-install": [ ],
         "post-install-cmd": [ ],
         "post-autoload-dump": [ ],
-        "post-create-project-cmd": [ ]
+        "post-create-project-cmd": [
+            "./vendor/m3uzz/oniontool/bin/cmstool.php -a=tool2Bin"
+        ]
     }
 }
