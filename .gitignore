@@ -1,6 +1,5 @@
 ./bin/*
 ./client/*
-./temp/*
 ./vendor/*
 ./.settings/*
 ./.buildpath
