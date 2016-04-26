@@ -1,0 +1,35 @@
+{
+    "name": "m3uzz/onion-cms-skeleton",
+    "description": "Skeleton Application for Onion CMS",
+    "homepage": "http://onion.m3uzz.com/",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Humberto S Lourenco",
+            "email": "betto@m3uzz.com"
+        }
+    ],
+    "require": {
+	"m3uzz/onionjs": "v0.16.4",
+        "jquery/jquery": "1.12.3",
+        "twbs/bootstrap": "v3.3.6",
+	"jaysalvat/vegas": "v2.2.0",
+	"igorescobar/jQuery-Mask-Plugin": "v1.14.0",
+	"moment/moment": "2.13.0",
+	"weareoutman/clockpicker": "v0.0.7"
+    },
+    "dist": {
+	"jquery/jquery-ui": "http://jqueryui.com/resources/download/jquery-ui-1.11.4.zip",
+	"highcharts/highcharts": "http://code.highcharts.com/zips/Highcharts-4.2.4.zip",
+	"fullcalendar/fullcalendar": "https://github.com/fullcalendar/fullcalendar/releases/download/v2.6.1/fullcalendar-2.6.1.zip",
+	"google/material-design-lite": "https://github.com/google/material-design-lite/archive/v1.1.3.tar.gz",
+	"ckeditor/ckeditor": "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.8/ckeditor_4.5.8_standard.zip",
+	"angular/angular.js": "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"
+    },
+    "suggestion": {
+	"angular/angular.js": "v1.5.5",
+	"LPology/Simple-Ajax-Uploader": "2.5.5",
+	"ckeditor/ckeditor-dev": "4.5.8",
+	"google/material-design-lite": "v1.1.3"
+    }
+}

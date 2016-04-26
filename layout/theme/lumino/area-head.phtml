@@ -53,22 +53,22 @@ if (isset($gaMeta['admCSS']) && !empty($gaMeta['admCSS']))
 }
 
 $this->headLink()
-	->prependStylesheet($this->basePath('/vendor/lumino/css/print.css'), 'print')
-	->prependStylesheet($this->basePath('/vendor/lumino/css/media.css'), 'all')
-	->prependStylesheet($this->basePath('/vendor/onion/css/style.css'), 'all')
-	->prependStylesheet($this->basePath('/vendor/jquery-ui-1.11.2/jquery-ui.min.css'), 'all')
-	->prependStylesheet($this->basePath('/vendor/bootstrap-3.3.4/css/bootstrap-theme.min.css'), 'all')
-	->prependStylesheet($this->basePath('/vendor/bootstrap-3.3.4/css/bootstrap.min.css'), 'all');
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/css/print.css'), 'print')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/css/media.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/css/style.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/jquery/jquery-ui-1.11.4/jquery-ui.min.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/twbs/bootstrap-3.3.6/dist/css/bootstrap-theme.min.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/twbs/bootstrap-3.3.6/dist/css/bootstrap.min.css'), 'all');
 
 $this->headScript()
-  	->prependFile($this->basePath('/vendor/onion/js/common.js'))
-  	->prependFile($this->basePath('/vendor/onion/js/popup.js'))
-   	->prependFile($this->basePath('/vendor/bootstrap-3.3.4/js/bootstrap.min.js'))
-   	->prependFile($this->basePath('/vendor/jquery-ui-1.11.2/jquery-ui.min.js'))
-    ->prependFile($this->basePath('/vendor/jquery-1.11.1/jquery.min.js'))
-    ->prependFile($this->basePath('/vendor/onion/js/loadfile.js'))
-    ->prependFile($this->basePath('/vendor/onion/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
-    ->prependFile($this->basePath('/vendor/onion/js/html5shiv.js'), 'text/javascript', array('conditional' => 'lt IE 9',));
+  	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/common.js'))
+  	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/popup.js'))
+   	->prependFile($this->basePath('/vendor/twbs/bootstrap-3.3.6/dist/js/bootstrap.min.js'))
+   	->prependFile($this->basePath('/vendor/jquery/jquery-ui-1.11.4/jquery-ui.min.js'))
+    ->prependFile($this->basePath('/vendor/jquery/jquery-1.12.3/dist/jquery.min.js'))
+    ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/loadfile.js'))
+    ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/html5shiv.js'), 'text/javascript', array('conditional' => 'lt IE 9',));
 ?>
     <head>
         <meta charset="<?php echo $gaMeta['charset']?>">
