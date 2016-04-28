@@ -51,13 +51,13 @@ $gaLog = Onion\Config\Config::getAppOptions('log');
 $gbDebugJs = $gaLog['debug']['JS'];
 
 $this->headLink()
-->prependStylesheet($this->basePath('/vendor/lumino/css/theme-styles.css'), 'all')
+->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/css/theme-styles.css'), 'all')
 ->prependStylesheet($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/css/bootstrap-clockpicker.min.css'), 'all');
 
 $this->headScript()
 ->prependFile($this->basePath('/js/backend.js'))
-->prependFile($this->basePath('/vendor/lumino/js/theme-script.js'))
-->prependFile($this->basePath('/vendor/lumino/js/jquery.cookie.js'))
+->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/theme-script.js'))
+->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/jquery.cookie.js'))
 ->prependFile($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/js/bootstrap-clockpicker.min.js'))
 ->prependFile($this->basePath('/vendor/moment/moment-2.13.0/locale/pt-br.js'))
 ->prependFile($this->basePath('/vendor/moment/moment-2.13.0/min/moment.min.js'))

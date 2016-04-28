@@ -40,7 +40,7 @@
         "m3uzz/onionsrv": "master",
         "m3uzz/onionfw": "master",
         "m3uzz/module": "master",
-        "zendframework/zendframework": "2.3.*",
+        "zendframework/zendframework": "2.3.0",
         "doctrine/doctrine-orm-module": "0.7.*",
         "firephp/firephp-core": "dev-master",
         "facebook/php-sdk-v4": "dev-master"
@@ -56,7 +56,9 @@
     "bin": [ ],
    "scripts": {
         "post-update-cmd": [ ],
-        "post-package-install": [ ],
+        "post-package-install": [
+	    "./vendor/m3uzz/oniontool/bin/cmstool.php -a=prepare"
+	],
         "post-install-cmd": [ ],
         "post-autoload-dump": [ ],
         "post-create-project-cmd": [
