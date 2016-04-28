@@ -56,13 +56,13 @@
     "bin": [ ],
    "scripts": {
         "post-update-cmd": [ ],
-        "post-package-install": [
-	    "./vendor/m3uzz/oniontool/bin/cmstool.php -a=prepare"
+        "post-package-install": [ ],
+        "post-install-cmd": [
+	    "./vendor/m3uzz/oniontool/bin/cmstool.php -a=tool2Bin"
 	],
-        "post-install-cmd": [ ],
         "post-autoload-dump": [ ],
         "post-create-project-cmd": [
-            "./vendor/m3uzz/oniontool/bin/cmstool.php -a=prepare"
+            "./vendor/m3uzz/oniontool/bin/cmstool.php -a=tool2Bin"
         ]
     }
 }
