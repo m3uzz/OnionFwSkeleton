@@ -60,7 +60,7 @@
         "post-install-cmd": [ ],
         "post-autoload-dump": [ ],
         "post-create-project-cmd": [
-            "./vendor/m3uzz/oniontool/bin/cmstool.php -a=tool2Bin"
+            "./vendor/m3uzz/oniontool/bin/cmstool.php -a=prepare"
         ]
     }
 }
