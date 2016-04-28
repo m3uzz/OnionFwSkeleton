@@ -74,7 +74,7 @@ return array(
 			'type' 			=> 'phone',
 			'label'			=> 'Comercial',
 			'contact' 		=> 'Humberto Lourenço',
-			'value'			=> '+55 34 9998-8877',
+			'value'			=> '',
 		),
 		array(
 			'type' 			=> 'email',
@@ -97,10 +97,10 @@ return array(
 		),
 	),
 	'socialNetwork' => array(
-		'facebook' 			=> 'http://facebook.com/agenciam3uzz',
-		'twitter' 			=> 'http://twitter.com/agenciam3uzz',
+		'facebook' 			=> 'http://facebook.com/',
+		'twitter' 			=> 'http://twitter.com/',
 		'vine'				=> 'http://vine.co/',
-		'youtube' 			=> 'http://youtube.com/user/m3uzz',
+		'youtube' 			=> 'http://youtube.com/',
 		'googlePlus' 		=> 'http://plus.google.com/',
 		'instagram'			=> 'http://instagram.com/',
 	),
