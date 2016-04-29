@@ -50,16 +50,16 @@ $gbDebugJs = $gaLog['debug']['JS'];
 
 $this->headLink()
 ->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/css/theme-styles.css'), 'all')
-->prependStylesheet($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/css/bootstrap-clockpicker.min.css'), 'all');
+->prependStylesheet($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/bootstrap-clockpicker.min.css'), 'all');
 
 $this->headScript()
 ->prependFile($this->basePath('/js/backend.js'))
 ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/theme-script.js'))
-->prependFile($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/js/bootstrap-clockpicker.min.js'))
+->prependFile($this->basePath('/vendor/weareoutman/clockpicker-0.0.7/dist/bootstrap-clockpicker.min.js'))
 ->prependFile($this->basePath('/vendor/moment/moment-2.13.0/locale/pt-br.js'))
 ->prependFile($this->basePath('/vendor/moment/moment-2.13.0/min/moment.min.js'))
 ->prependFile($this->basePath('/js/formmask.js'))
-->prependFile($this->basePath('/vendor/igorescobar/jQuery-Mask-Plugin-1.14.0/dist/js/jquery.mask.min.js'));
+->prependFile($this->basePath('/vendor/igorescobar/jQuery-Mask-Plugin-1.14.0/dist/jquery.mask.min.js'));
 
 echo $this->doctype($gaMeta['doctype']); 
 ?>
