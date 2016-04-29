@@ -41,7 +41,7 @@ return array(
 				//'driver'            => 'orm_default',
 			
 				// Generate proxies automatically (turn off for production)
-				'generate_proxies'  => false,
+				'generate_proxies'  => true,
 			
 				// directory where proxies will be stored. By default, this is in
 				// the `data` directory of your application
