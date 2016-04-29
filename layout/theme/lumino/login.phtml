@@ -45,6 +45,7 @@
 $gsIcon = Onion\Config\Config::getAppOptions('icon');
 $gaBackend = Onion\Config\Config::getAppOptions('admin');
 $gaMeta = $gaBackend['meta'];
+$gsBgVegas = (isset($gaBackend['bgVegas']) ? json_encode($gaBackend['bgVegas'], JSON_UNESCAPED_SLASHES) : '[]');
 $gaLog = Onion\Config\Config::getAppOptions('log');
 $gbDebugJs = $gaLog['debug']['JS'];
 
@@ -60,6 +61,16 @@ echo $this->doctype($gaMeta['doctype']);
 <html lang="<?php echo $gaMeta['lang']; ?>">
 	<?php include ('area-head.phtml'); ?>
 	
+	<?php 
+	if ($gsBgVegas !== '[]')
+	{
+		echo '
+		<script type="text/javascript">
+			var bgVegas = ' . $gsBgVegas . ';
+		</script>';
+		}
+	?>
+			
     <body id="login">
         <div  class="container">
             <?php echo $this->content; ?>

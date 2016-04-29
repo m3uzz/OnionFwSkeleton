@@ -44,6 +44,7 @@
  
 $gaBackend = $this->get('admin');
 $gaMeta = $gaBackend['meta'];
+$gaBgVegas = (isset($gaBackend['bgVegas']) ? json_encode($gaBackend['bgVegas'], JSON_UNESCAPED_SLASHES) : '[]');
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
@@ -65,6 +66,16 @@ $gaMeta = $gaBackend['meta'];
 		<script type="text/javascript" src="/vendor/jquery/jquery-1.12.3/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="/vendor/jaysalvat/vegas-2.2.0/dist/vegas.min.js"></script>
 		<script type="text/javascript" src="/vendor/m3uzz/onionjs-0.16.4/dist/js/vegas.conf.js"></script>
+		
+		<?php 
+		if ($gaBgVegas !== '[]')
+		{
+			echo '
+			<script type="text/javascript">
+				var bgVegas = ' . $gaBgVegas . ';
+			</script>';
+			}
+		?>
     </head>
     <body id="not-available">
         <div class="container">
