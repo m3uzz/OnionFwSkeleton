@@ -1,0 +1,124 @@
+<?php
+/**
+ * This file is part of Onion
+ *
+ * Copyright (c) 2014-2016, Humberto Lourenço <betto@m3uzz.com>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Humberto Lourenço nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    Onion
+ * @author     Humberto Lourenço <betto@m3uzz.com>
+ * @copyright  2014-2016 Humberto Lourenço <betto@m3uzz.com>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/m3uzz/onionfw
+ */
+ 
+
+$this->headTitle($gaMeta['siteTitle'])
+	->setSeparator($gaMeta['titleSeparator'])
+	->setAutoEscape(false);
+
+$this->headMeta()
+	->appendName('viewport', $gaMeta['viewport'])
+	->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+	->appendHttpEquiv('pragma', $gaMeta['pragma'])
+	->appendHttpEquiv('Cache-Control', $gaMeta['pragma'])
+	->appendHttpEquiv('Content-Type', 'text/html; charset=' . $gaMeta['charset'])
+	->appendHttpEquiv('Content-Language', $gaMeta['locale'])
+	->appendName('description', $gaMeta['description'])
+	->appendName('keywords', $gaMeta['keywords'])
+	->appendName('author', $gaMeta['author'])
+	->appendName('base', $gaConfig['url']['site'])
+;
+
+if (!empty($gaMeta['favIcon']))
+{
+	$this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath($gaMeta['favIcon'])));
+}
+
+if (isset($gaMeta['frontCSS']) && !empty($gaMeta['frontCSS']))
+{
+	$this->headLink()->prependStylesheet($this->basePath($gaMeta['frontCSS']), 'all');
+}
+
+$this->headLink()
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/responsive.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/styles.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/colors/blue.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/nivo_themes/default/default.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/nivo-lightbox.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/owl.carousel.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/css/owl.theme.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/fonts/elegant-icons/style.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/fonts/ionicons/css/ionicons.css'), 'all')
+	->prependStylesheet($this->basePath('/vendor/twbs/bootstrap-3.3.6/dist/css/bootstrap.min.css'), 'all')
+;
+
+$this->inlineScript()
+	->prependFile($this->basePath('/js/backend.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/custom.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/jquery.ajaxchimp.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/jquery.fitvids.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/jquery.nav.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/simple-expand.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/nivo-lightbox.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/owl.carousel.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/jquery.localScroll.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/jquery.scrollTo.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/smoothscroll.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/js/retina-1.1.0.min.js'))
+	->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/front/fonts/elegant-icons/lte-ie7.js'), 'text/javascript', array('conditional' => 'lte IE 7',))
+   	->prependFile($this->basePath('/vendor/twbs/bootstrap-3.3.6/dist/js/bootstrap.min.js'))
+;
+
+$this->headScript()
+    ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+    ->prependFile($this->basePath('/vendor/m3uzz/onionjs-0.16.4/dist/js/html5shiv.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
+;
+?>
+    <head>
+        <meta charset="<?php echo $gaMeta['charset']?>">
+        
+        <?php echo $this->headTitle(); ?>
+        
+        <?php echo $this->headMeta(); ?>
+        
+        <?php echo $this->headLink(); ?>
+        
+        <?php echo $this->headScript(); ?>
+        
+		<script type="text/javascript">
+			var OnionDebugJs = <?php echo ($gbDebugJs ? 'true' : 'false'); ?>;
+			var facebookAppId = '<?php echo $gaService['app-id']; ?>';
+			var facebookScope = '<?php echo implode(",", $gaService['scope']); ?>';
+		</script>
+    </head>
