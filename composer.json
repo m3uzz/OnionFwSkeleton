@@ -40,10 +40,11 @@
         "m3uzz/onionsrv": "master",
         "m3uzz/onionfw": "master",
         "m3uzz/module": "master",
-        "zendframework/zendframework": "2.3.0",
-        "doctrine/doctrine-orm-module": "0.7.*",
+        "zendframework/zendframework": "2.*",
+        "doctrine/doctrine-orm-module": "master",
         "firephp/firephp-core": "dev-master",
-        "facebook/php-sdk-v4": "dev-master"
+        "facebook/php-sdk-v4": "dev-master",
+        "ircmaxell/random-lib": "1.*"
     },
     "require-dev": {
         "m3uzz/oniontool": "master",
