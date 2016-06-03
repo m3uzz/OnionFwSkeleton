@@ -41,7 +41,7 @@
         "m3uzz/onionfw": "master",
         "m3uzz/module": "master",
         "zendframework/zendframework": "2.*",
-        "doctrine/doctrine-orm-module": "master",
+        "doctrine/doctrine-orm-module": "0.9.*",
         "firephp/firephp-core": "dev-master",
         "facebook/php-sdk-v4": "dev-master",
         "ircmaxell/random-lib": "1.*"
