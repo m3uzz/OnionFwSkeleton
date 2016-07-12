@@ -44,8 +44,8 @@
  
 if (isset($loUser) && is_object($loUser))
 {
-	$loPerson = $loUser->get('Person');
-	$loGroup = $loUser->get('UserGroup');
+	//$loPerson = $loUser->get('Person');
+	//$loGroup = $loUser->get('UserGroup');
 	$lsPicture = $loUser->get('stPicture');
 
 	$lsRouteLogout = $this->url('access', array(
@@ -84,9 +84,9 @@ if (isset($loUser) && is_object($loUser))
 						</a>
 						<div class="media-body text-nowrap">
 							<h4  class="text-nowrap media-heading">' . $loUser->get('stUsername') . '</h4>
-							<div class="text-nowrap">Nome: ' . $loPerson->get('stName') . '</div>
+							<div class="text-nowrap">Nome: ' . $loUser->get('PersonName') . '</div>
 							<div class="text-nowrap">E-mail: ' . $loUser->get('stEmail') . '</div>
-							<div class="text-nowrap">Grupo: ' . $loGroup->get('stLabel') . '</div>
+							<div class="text-nowrap">Grupo: ' . $loUser->get('UserGroupName') . '</div>
 						</div>
 					</div>
 					<div role="presentation" class="divider"></div>
